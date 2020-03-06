@@ -1,0 +1,27 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.24720.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{0E7E5B95-7257-4A84-B344-6C80CF4DB9E9}"
+	ProjectSection(SolutionItems) = preProject
+		SeleniumCSharp.testsettings = SeleniumCSharp.testsettings
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SeleniumCSharpMSTest", "SeleniumCSharpMSTest\SeleniumCSharpMSTest.csproj", "{9C75BFDD-D924-4633-8D71-386624206684}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9C75BFDD-D924-4633-8D71-386624206684}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9C75BFDD-D924-4633-8D71-386624206684}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9C75BFDD-D924-4633-8D71-386624206684}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9C75BFDD-D924-4633-8D71-386624206684}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
