@@ -616,6 +616,91 @@ namespace SeleniumCSharpMSTest.TestScripts
 
 
 
+        [DataSource("System.Data.Odbc", "Dsn=Excel Files;Driver={Microsoft Excel Driver (*.xlsx)};dbq=|DataDirectory|\\DataManager\\TestData.xlsx;defaultdir=.;driverid=1046;maxbuffersize=2048;pagetimeout=5", "SalesProspect$", DataAccessMethod.Sequential), TestMethod]
+        public void SalesNewProspect_Retail()
+        {
+            DynamicFunctions login = new DynamicFunctions();
+            Salesfunctions sales = new Salesfunctions();
+            GenericFunctions generic = new GenericFunctions();
+            string timestamp = System.DateTime.Now.ToString("ddMMyyhhmmss");
+            string IDnumber = TestContext.DataRow["IDnumber"].ToString() + timestamp;
+            string mobilenumber = timestamp;
+            string Firstname = timestamp;
+
+            login.Login(driver, extentTest, testName, testDataIteration, uRL, TestContext.DataRow["UserName"].ToString(), TestContext.DataRow["Password"].ToString());
+            sales.Navigatetoprospects(driver, extentTest, testName, testDataIteration);
+            sales.Createnewprospects(driver, extentTest, testName, testDataIteration, mobilenumber, Firstname, TestContext.DataRow["Lastname"].ToString(), TestContext.DataRow["Monthlyliabilities"].ToString(), TestContext.DataRow["IDtype"].ToString(), IDnumber, TestContext.DataRow["Product"].ToString(), TestContext.DataRow["Monthlysalary"].ToString(), TestContext.DataRow["Dateofbirth"].ToString(), TestContext.DataRow["Lenghtofservice"].ToString(), TestContext.DataRow["Employer"].ToString());
+            //sales.Inactiveprospect(driver, extentTest, testName, testDataIteration, mobilenumber, Firstname, TestContext.DataRow["Lastname"].ToString(), TestContext.DataRow["Monthlyliabilities"].ToString(), TestContext.DataRow["IDtype"].ToString(), IDnumber);
+        }
+        [DataSource("System.Data.Odbc", "Dsn=Excel Files;Driver={Microsoft Excel Driver (*.xlsx)};dbq=|DataDirectory|\\DataManager\\TestData.xlsx;defaultdir=.;driverid=1046;maxbuffersize=2048;pagetimeout=5", "SalesProspect$", DataAccessMethod.Sequential), TestMethod]
+        public void Inactivepropspect()
+        {
+            DynamicFunctions login = new DynamicFunctions();
+            Salesfunctions sales = new Salesfunctions();
+            GenericFunctions generic = new GenericFunctions();
+            string timestamp = System.DateTime.Now.ToString("ddMMyyhhmmss");
+            string IDnumber = TestContext.DataRow["IDnumber"].ToString() + timestamp;
+            string mobilenumber = timestamp;
+            string Firstname = timestamp;
+
+            login.Login(driver, extentTest, testName, testDataIteration, uRL, TestContext.DataRow["UserName"].ToString(), TestContext.DataRow["Password"].ToString());
+            sales.Navigatetoprospects(driver, extentTest, testName, testDataIteration);
+            //sales.Createnewprospects(driver, extentTest, testName, testDataIteration, mobilenumber, Firstname, TestContext.DataRow["Lastname"].ToString(), TestContext.DataRow["Monthlyliabilities"].ToString(), TestContext.DataRow["IDtype"].ToString(), IDnumber);
+            sales.Inactiveprospect(driver, extentTest, testName, testDataIteration, mobilenumber, Firstname, TestContext.DataRow["Lastname"].ToString(), TestContext.DataRow["Monthlyliabilities"].ToString(), TestContext.DataRow["IDtype"].ToString(), IDnumber);
+        }
+
+        [DataSource("System.Data.Odbc", "Dsn=Excel Files;Driver={Microsoft Excel Driver (*.xlsx)};dbq=|DataDirectory|\\DataManager\\TestData.xlsx;defaultdir=.;driverid=1046;maxbuffersize=2048;pagetimeout=5", "Servicerequest$", DataAccessMethod.Sequential), TestMethod]
+        public void Servicerequest()
+        {
+            DynamicFunctions login = new DynamicFunctions();
+            GenericFunctions generic = new GenericFunctions();
+            Servicefunctions service = new Servicefunctions();
+            login.Login(driver, extentTest, testName, testDataIteration, uRL, TestContext.DataRow["UserName"].ToString(), TestContext.DataRow["Password"].ToString());
+            service.Navigateservicepage(driver, extentTest, testName, testDataIteration);
+            service.createnewcase(driver, extentTest, testName, testDataIteration, TestContext.DataRow["Customer"].ToString(), TestContext.DataRow["Retailcustomer"].ToString(), TestContext.DataRow["Corparatecustomer"].ToString(), TestContext.DataRow["Documentname"].ToString(), TestContext.DataRow["Posttext"].ToString(), TestContext.DataRow["Cancelreason"].ToString(), TestContext.DataRow["Canceldiscription"].ToString(), TestContext.DataRow["Categorychangereason"].ToString(), TestContext.DataRow["Phonecallsubject"].ToString(), TestContext.DataRow["Appoinmentsubject"].ToString());
+        }
+        [DataSource("System.Data.Odbc", "Dsn=Excel Files;Driver={Microsoft Excel Driver (*.xlsx)};dbq=|DataDirectory|\\DataManager\\TestData.xlsx;defaultdir=.;driverid=1046;maxbuffersize=2048;pagetimeout=5", "Servicerequest$", DataAccessMethod.Sequential), TestMethod]
+        public void Caseparking()
+        {
+            DynamicFunctions login = new DynamicFunctions();
+            GenericFunctions generic = new GenericFunctions();
+            Caseparking parking = new Caseparking();
+            login.Login(driver, extentTest, testName, testDataIteration, uRL, TestContext.DataRow["UserName"].ToString(), TestContext.DataRow["Password"].ToString());
+            parking.Navigateservicepage(driver, extentTest, testName, testDataIteration);
+            parking.createnewcase(driver, extentTest, testName, testDataIteration, TestContext.DataRow["Customer"].ToString(), TestContext.DataRow["reason"].ToString(), TestContext.DataRow["Discription"].ToString());
+        }
+        [DataSource("System.Data.Odbc", "Dsn=Excel Files;Driver={Microsoft Excel Driver (*.xlsx)};dbq=|DataDirectory|\\DataManager\\TestData.xlsx;defaultdir=.;driverid=1046;maxbuffersize=2048;pagetimeout=5", "SalesProspect$", DataAccessMethod.Sequential), TestMethod]
+        public void SalesNewProspect_Corparate()
+        {
+            DynamicFunctions login = new DynamicFunctions();
+            Salesfunctions sales = new Salesfunctions();
+            GenericFunctions generic = new GenericFunctions();
+            string timestamp = System.DateTime.Now.ToString("ddMMyyhhmmss");
+            string IDnumber = TestContext.DataRow["IDnumber"].ToString() + timestamp;
+            string mobilenumber = timestamp;
+            string Firstname = timestamp;
+            string Companyname = timestamp;
+
+
+
+            login.Login(driver, extentTest, testName, testDataIteration, uRL, TestContext.DataRow["UserName"].ToString(), TestContext.DataRow["Password"].ToString());
+            sales.Navigatetoprospects(driver, extentTest, testName, testDataIteration);
+            sales.CreatenewprospectsCorparate(driver, extentTest, testName, testDataIteration, mobilenumber, Firstname, TestContext.DataRow["Lastname"].ToString(), TestContext.DataRow["Monthlyliabilities"].ToString(), TestContext.DataRow["IDtype"].ToString(), Companyname, IDnumber, TestContext.DataRow["Corpproduct"].ToString(), TestContext.DataRow["Netprofit"].ToString(), TestContext.DataRow["Equity"].ToString(), TestContext.DataRow["Turnover"].ToString());
+        }
+        [DataSource("System.Data.Odbc", "Dsn=Excel Files;Driver={Microsoft Excel Driver (*.xlsx)};dbq=|DataDirectory|\\DataManager\\TestData.xlsx;defaultdir=.;driverid=1046;maxbuffersize=2048;pagetimeout=5", "Reports$", DataAccessMethod.Sequential), TestMethod]
+        public void Reports()
+        {
+            DynamicFunctions login = new DynamicFunctions();
+            GenericFunctions generic = new GenericFunctions();
+            Reportsfunctions reports = new Reportsfunctions();
+            login.Login(driver, extentTest, testName, testDataIteration, uRL, TestContext.DataRow["UserName"].ToString(), TestContext.DataRow["Password"].ToString());
+            reports.Navigatetoreports(driver, extentTest, testName, testDataIteration);
+            reports.Reportdetails(driver, extentTest, testName, testDataIteration, TestContext.DataRow["Searchrecords"].ToString(), TestContext.DataRow["Numberofdays"].ToString(), TestContext.DataRow["agingSearchrecords"].ToString(), TestContext.DataRow["Days"].ToString(), TestContext.DataRow["AverageCaseClosuresearch"].ToString());
+        }
+
+
+
+
         /// <summary>
         /// Method to close the browsers and Write to Report
         /// </summary>

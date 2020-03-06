@@ -81,12 +81,17 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="Functions\Caseparkandpost.cs" />
     <Compile Include="Functions\CollectionFunctions.cs" />
     <Compile Include="Functions\DynamicFunctions.cs" />
     <Compile Include="Functions\Generic Functions.cs" />
     <Compile Include="Functions\LoginFunctions.cs" />
     <Compile Include="Functions\CorporateCustomer.cs" />
     <Compile Include="Functions\Customer360Functions.cs" />
+    <Compile Include="Functions\Reportsfunctions.cs" />
+    <Compile Include="Functions\Salesfunctions.cs" />
+    <Compile Include="Functions\ServiceCases.cs" />
+    <Compile Include="Functions\Servicefunctions.cs" />
     <Compile Include="ObjectRepository\MarketingObjects.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TestScripts\Testing.cs" />
